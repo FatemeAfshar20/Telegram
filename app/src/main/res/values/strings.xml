@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Telegram</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="maktab_37">Maktab 37</string>
+    <string name="date">1/12/2021</string>
+    <string name="makatb_channel">Makatb channel</string>
+    <string name="message">Message</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="phone_number">phone number</string>
+</resources>
