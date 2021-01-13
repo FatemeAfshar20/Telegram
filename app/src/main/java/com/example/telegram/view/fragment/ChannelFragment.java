@@ -1,4 +1,4 @@
-package com.example.telegram.view;
+package com.example.telegram.view.fragment;
 
 import android.os.Bundle;
 
@@ -11,15 +11,16 @@ import android.view.ViewGroup;
 import com.example.telegram.R;
 
 
-public class HomeFragment extends Fragment {
+public class ChannelFragment extends Fragment {
 
-    public HomeFragment() {
+    public ChannelFragment() {
         // Required empty public constructor
     }
 
-    public static HomeFragment newInstance() {
-        HomeFragment fragment = new HomeFragment();
+    public static ChannelFragment newInstance() {
+        ChannelFragment fragment = new ChannelFragment();
         Bundle args = new Bundle();
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -33,6 +34,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_channel, container, false);
     }
 }

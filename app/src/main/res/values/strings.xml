@@ -8,4 +8,8 @@
     <string name="message">Message</string>
     <string name="add_contact">Add Contact</string>
     <string name="phone_number">phone number</string>
+    <string name="home">Home</string>
+    <string name="channel">Channel</string>
+    <string name="group">Group</string>
+    <string name="contact">+ contact</string>
 </resources>

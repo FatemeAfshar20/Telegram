@@ -1,5 +1,6 @@
 package com.example.telegram.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -12,6 +13,7 @@ import java.util.UUID;
 
 @Entity(tableName = UserSchema.User.NAME)
 public class User {
+    @NonNull
     @PrimaryKey
     @ColumnInfo(name = UserColumn.UUID)
     private UUID mId;
@@ -24,6 +26,7 @@ public class User {
 
     public User() {
         mId=UUID.randomUUID();
+        mDate=new Date();
     }
 
     public User(String name, String phoneNumber, Date date,UUID id) {
@@ -55,5 +58,13 @@ public class User {
 
     public void setDate(Date date) {
         mDate = date;
+    }
+
+    public UUID getId() {
+        return mId;
+    }
+
+    public void setId(UUID id) {
+        mId = id;
     }
 }

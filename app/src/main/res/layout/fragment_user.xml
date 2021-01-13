@@ -1,73 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ContactPageFragment"
-    android:orientation="vertical"
-    android:background="@drawable/background_contact"
     >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.telegram.viewModel.ContactPageViewModel" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:background="#D2FFFFFF"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.ContactPageFragment"
+        android:orientation="vertical"
+        android:background="@drawable/background_contact"
         >
 
-        <com.mikhaellopez.circularimageview.CircularImageView
-            android:id="@+id/imv_profile"
-            android:layout_width="80dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="80dp"
-            tools:src="@drawable/flower_2"
-            app:civ_border_color="#B8C1F3"
-            app:civ_border_width="2dp"
-            android:layout_margin="5dp"
-            app:civ_shadow_color="#B8C1F6"/>
+            android:orientation="horizontal"
+            android:background="#D2FFFFFF"
+            >
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_toEndOf="@+id/imv_profile"
-            android:layout_toRightOf="@+id/imv_profile"
-            tools:text="Fateme"
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/imv_profile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/flower_2"
+                app:civ_border_color="#B8C1F3"
+                app:civ_border_width="2dp"
+                android:layout_margin="5dp"
+                app:civ_shadow_color="#B8C1F6"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/imv_profile"
+                android:layout_toRightOf="@+id/imv_profile"
+                android:text="@{viewModel.user.name}"
+                tools:text="Fateme"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="34dp"
+                android:layout_toEndOf="@+id/tv_name"
+                android:layout_toRightOf="@+id/tv_name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="@{viewModel.user.phoneNumber}"
+                tools:text="1/12/2021" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_phone_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginBottom="34dp"
-            android:layout_toEndOf="@+id/tv_name"
-            android:layout_toRightOf="@+id/tv_name"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:text="1/12/2021" />
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/message"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </RelativeLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="5dp"
-        android:layout_alignParentBottom="true"
-        >
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/message"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-</RelativeLayout>
+</layout>

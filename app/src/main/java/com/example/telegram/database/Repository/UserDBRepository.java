@@ -46,8 +46,8 @@ public class UserDBRepository implements IRepository<User> {
         return mDAO.get(id);
     }
 
-    public User get(String username) {
-        return mDAO.get(username);
+    public User get(String name) {
+        return mDAO.get(name);
     }
 
     @Override
@@ -65,8 +65,8 @@ public class UserDBRepository implements IRepository<User> {
         mDAO.update(user);
     }
 
-    public boolean IsUserExist(String username){
-       if (mDAO.findUser(username)!=null)
+    public boolean IsUserExist(String name){
+       if (mDAO.findUser(name)!=null)
            return true;
        return false;
     }

@@ -1,4 +1,4 @@
-package com.example.telegram.view;
+package com.example.telegram.view.fragment;
 
 import android.os.Bundle;
 
@@ -10,19 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.telegram.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ContactFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class ContactFragment extends Fragment {
 
-    public ContactFragment() {
+public class GroupFragment extends Fragment {
+
+    public GroupFragment() {
         // Required empty public constructor
     }
 
-    public static ContactFragment newInstance() {
-        ContactFragment fragment = new ContactFragment();
+
+    public static GroupFragment newInstance() {
+        GroupFragment fragment = new GroupFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -37,6 +34,6 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        return inflater.inflate(R.layout.fragment_group, container, false);
     }
 }
