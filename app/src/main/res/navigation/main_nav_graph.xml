@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/des_home_fragment"
+    >
+
+    <activity
+        android:id="@+id/des_main_activity"
+        android:name="com.example.telegram.view.activity.MainActivity"
+        android:label="Activity"
+        tools:layout="@layout/container"/>
+
+    <fragment
+        android:id="@+id/des_home_fragment"
+        android:name="com.example.telegram.view.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_des_home_fragment_to_des_main_activity"
+            app:destination="@id/des_main_activity" />
+        <action
+            android:id="@+id/action_des_home_fragment_to_des_contact_page_fragment"
+            app:destination="@id/des_contact_page_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/des_channel_fragment"
+        android:name="com.example.telegram.view.fragment.ChannelFragment"
+        android:label="ChannelFragment"
+        tools:layout="@layout/fragment_channel"
+        >
+        <action
+            android:id="@+id/action_des_channel_fragment_to_des_contact_page_fragment"
+            app:destination="@id/des_contact_page_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/des_group_fragment"
+        android:name="com.example.telegram.view.fragment.GroupFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_group"
+        >
+        <action
+            android:id="@+id/action_des_group_fragment_to_des_home_fragment"
+            app:destination="@id/des_home_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/des_add_contact_fragment"
+        android:name="com.example.telegram.view.fragment.AddContactFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_add_contact"
+        >
+        <action
+            android:id="@+id/action_des_add_contact_fragment_to_des_group_fragment"
+            app:destination="@id/des_group_fragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/des_contact_page_fragment"
+        android:name="com.example.telegram.view.fragment.ContactPageFragment"
+        android:label="AddContactFragment"
+        tools:layout="@layout/fragment_user"
+        />
+
+</navigation>

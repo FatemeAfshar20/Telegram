@@ -2,11 +2,9 @@ package com.example.telegram.view.activity;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import com.example.telegram.R;
-import com.example.telegram.databinding.ContainerBinding;
 
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
@@ -15,12 +13,12 @@ public abstract class SingleFragmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         Fragment fragment=getSupportFragmentManager().
-                findFragmentById(R.id.fragment_container);
+                findFragmentById(R.id.nav_host_fragment);
 
         if (fragment==null)
             getSupportFragmentManager().
                     beginTransaction().
-                    add(R.id.fragment_container,getFragment()).
+                    add(R.id.nav_host_fragment,getFragment()).
                     commit();
     }
 
